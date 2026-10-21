@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NexWeather | Weather Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="dashboard">
+
+        <header class="topbar">
+            <a href="#" class="brand">
+                <span class="brand-icon">◈</span>
+                <span>NEX<span class="blue">WEATHER</span></span>
+            </a>
+            <span class="live-badge"><span class="live-dot"></span> LIVE WEATHER</span>
+        </header>
+
+        <section class="search-panel">
+            <div>
+                <p class="eyebrow">WEATHER INTELLIGENCE</p>
+                <h1>Explore the <span class="blue">atmosphere.</span></h1>
+                <p class="subtitle">Real-time conditions, wherever you are.</p>
+            </div>
+
+            <form id="searchForm" class="search-form">
+                <span>⌕</span>
+                <input id="cityInput" type="text"
+                    placeholder="Search city, e.g. Karachi"
+                    aria-label="City name" required>
+                <button type="submit">Search <span>↗</span></button>
+            </form>
+        </section>
+
+        <p id="message" class="message" role="status">
+            Enter a city to get its latest weather.
+        </p>
+
+        <section class="current-card panel">
+            <div class="current-heading">
+                <div>
+                    <p class="eyebrow">CURRENT CONDITIONS</p>
+                    <h2 id="cityName">Your City</h2>
+                    <p id="currentDate" class="muted">Local weather</p>
+                </div>
+                <span class="condition-badge">
+                    <span class="live-dot"></span> CURRENT
+                </span>
+            </div>
+
+            <div class="current-main">
+                <div class="temperature-block">
+                    <span id="weatherIcon" class="weather-icon">☀️</span>
+                    <div>
+                        <p id="temperature" class="temperature">--°</p>
+                        <p id="weatherDescription" class="condition">Loading weather...</p>
+                    </div>
+                </div>
+
+                <div class="feels-block">
+                    <span class="eyebrow">FEELS LIKE</span>
+                    <h3 id="feelsLike">--°C</h3>
+                    <p class="muted">Apparent temperature</p>
+                </div>
+            </div>
+
+            <div class="weather-stats">
+                <article class="stat-card">
+                    <span class="stat-icon blue-text">◉</span>
+                    <p class="stat-label">Humidity</p>
+                    <h3 id="humidity">--%</h3>
+                    <p class="stat-note">Relative humidity</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon blue-text">〰</span>
+                    <p class="stat-label">Wind speed</p>
+                    <h3 id="windSpeed">-- km/h</h3>
+                    <p class="stat-note">Wind movement</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon blue-text">☼</span>
+                    <p class="stat-label">UV index</p>
+                    <h3 id="uvIndex">--</h3>
+                    <p id="uvDescription" class="stat-note">UV level</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon blue-text">◎</span>
+                    <p class="stat-label">Visibility</p>
+                    <h3 id="visibility">-- km</h3>
+                    <p class="stat-note">Viewing distance</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel forecast-panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PLAN AHEAD</p>
+                    <h2>Hourly forecast</h2>
+                </div>
+                <span class="section-icon">◷</span>
+            </div>
+
+            <div id="hourlyForecast" class="hourly-grid">
+                <p class="empty-state">Hourly forecast will appear here.</p>
+            </div>
+        </section>
+
+        <section class="panel forecast-panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE WEEK AHEAD</p>
+                    <h2>7-day forecast</h2>
+                </div>
+                <span class="section-icon">▦</span>
+            </div>
+
+            <div id="weeklyForecast" class="weekly-list">
+                <p class="empty-state">Weekly forecast will appear here.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Designed with <span class="blue">◆</span> by NexWeather</p>
+            <p>Weather data: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p>
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
